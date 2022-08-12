@@ -1,5 +1,7 @@
 # Blog App
 
+A classic example of a blog website:  fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
