@@ -1,0 +1,15 @@
+.full-post-header {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.showed-post-action {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.post-text {
+  margin-bottom: 25px;
+}

@@ -1,0 +1,36 @@
+.user-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user {
+  display: flex;
+  width: 80vw;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  border: 4px solid rgba(0, 0, 0, 0.534);
+  margin-left: 60px;
+  height: 150px;
+  width: 70%;
+}
+
+.user-details h3 {
+  font-size: 30px;
+  margin-left: 60px;
+}
+
+.user-details p {
+  margin-left: 60%;
+}
+
+.user-image {
+  width: 200px;
+  height: 200px;
+  border: 4px solid rgba(0, 0, 0, 0.534);
+}
