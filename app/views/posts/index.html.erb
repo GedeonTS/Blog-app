@@ -1,1 +1,27 @@
-<p>Here is the list of posts for a given user</p>
+<div>
+<div class='user-card'>
+ <%= image_tag @user.photo, :class => 'user-showed-image', alt: 'User image' %>
+ <div class='user-showed-details'>
+ <h3><%= @user.name %></h3>
+      <p>Number of posts: <%= @user.posts_counter.nil? ? 0 : @user.posts_counter %></p>
+ </div> 
+ </div>
+ <div>
+ <% @posts.each_with_index do |post,i| %>
+    <div class='post-card'>
+    <h4>Post#<%=i+1 %></h4>
+      <h3><%=link_to post.title, user_post_path(@user.id, post), :class => 'post-title'%></h3>
+      <p class='showed-card-text'><%= post.text %></p>
+      <div class='showed-action'>
+        <p>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+      </div>
+    </div>
+    <div class='user-comments'>
+      <% post.recent_comments.each do |comment| %>
+        <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+ </div>
+ </div>
