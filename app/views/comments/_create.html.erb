@@ -1,5 +1,5 @@
 <section class="container mt-5 p-2 bio">
-  <%= form_with model:@comment, method: :post, local: true do |f| %>
+  <%= form_with model:@comment, url:"/users/#{@post.author_id}/posts/#{@post.id}/comments", method: :post, local: true do |f| %>
     <%= f.label :text, "comment", class: "comment-label" %><br>
     <%= f.text_area :text, size:"90x12", class: "text-area", placeholder: "Put your comment here...", required: true %>
     <br>

@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.post = post
     @comment.author = current_user
 
-    render :new unless @comment.save
+    render :new unless @comment
 
     redirect_to user_post_url(author, post)
   end
@@ -17,6 +17,5 @@ class CommentsController < ApplicationController
   private
 
   def comment_parameters
-    params.require(:comment).permit(:text)
   end
 end
