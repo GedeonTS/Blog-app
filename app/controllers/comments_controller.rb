@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
-    def new
-        @comment = Comment.new
-    end
+  def new
+    @comment = Comment.new
+  end
+
   def create
     post = Post.find(params[:post_id])
     author = post.author
@@ -16,6 +17,5 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_parameters
-  end
+  def comment_parameters; end
 end
