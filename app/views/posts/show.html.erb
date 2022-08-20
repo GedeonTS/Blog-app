@@ -12,4 +12,6 @@
   <% @post.comments.each do |comment| %>
     <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
   <% end %>
+      <%= render partial: "likes/create" %>
+    <%= render partial: 'comments/create' %>
 </div>
