@@ -6,20 +6,20 @@ RSpec.describe Comment, type: :view, js: true do
     @user.posts.create(title: 'Title', text: 'Body')
   end
 
-  # it 'Should display comment counter' do
-  #   visit users_path
-  #     click_link 'Liam'
-  #     expect(page).to have_content('See all posts')
-  #   end
+  it 'Should display comment counter' do
+    visit users_path
+    click_link 'Liam'
+    expect(page).to have_content('See all posts')
+  end
 
-  #   it 'Should display comment counter' do
-  #     visit user_posts_path(@user.id)
-  #     expect(page).to have_content('Comments')
-  #   end
+  it 'Should display comment counter' do
+    visit user_posts_path(@user.id)
+    expect(page).to have_content('Comments')
+  end
 
-  #   it 'Should display comment counter in post view' do
-  #     visit user_posts_path(@user.id)
-  #     click_link 'Title'
-  #     expect(page).to have_content('Comments')
-  #   end
+  it 'Should display comment counter in post view' do
+    visit user_posts_path(@user.id)
+    click_link 'Title'
+    expect(page).to have_content('Comments')
+  end
 end

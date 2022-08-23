@@ -22,19 +22,19 @@ RSpec.describe Post, type: :view do
     expect(page).to have_content('Likes')
   end
 
-  # it 'Should display text' do
-  #   expect(page).to have_content('Body')
-  # end
+  it 'Should display text' do
+    expect(page).to have_content('Body')
+  end
 
-  # it 'Should display comment user name' do
-  #   @user.posts.first.comments.create(text: 'Comment sample', author_id: @user)
-  #   visit user_post_path(@user, @user.posts.first)
-  #   expect(page).to have_content('Tom')
-  # end
+  it 'Should display comment user name' do
+    @user.posts.first.comments.create(text: 'Comment sample', author_id: @user)
+    visit user_post_path(@user, @user.posts.first)
+    expect(page).to have_content('Tom')
+  end
 
-  # it 'Should content See all posts button' do
-  #   visit user_path(@user.id)
-  #   expect(page).to have_content('Title')
-  #   expect(page).to have_content('See all posts')
-  # end
+  it 'Should content See all posts button' do
+    visit user_path(@user.id)
+    expect(page).to have_content('Title')
+    expect(page).to have_content('See all posts')
+  end
 end

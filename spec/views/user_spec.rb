@@ -76,29 +76,29 @@ RSpec.describe User, type: :view do
     expect(current_path).to eq(user_posts_path(@user1.id))
   end
 
-  # it 'Should display user photo' do
-  #   visit user_posts_path(@user1.id)
-  #   expect(page).to have_css("img[src*='https://images.unsplash.com/photo-1511384452836-6']")
-  # end
+  it 'Should display user photo' do
+    visit user_posts_path(@user1.id)
+    expect(page).to have_css("img[src*='https://images.unsplash.com/photo-1511384452836-6']")
+  end
 
-  # it 'Should display user name' do
-  #   visit user_posts_path(@user1.id)
-  #   expect(page).to have_content('Tim')
-  # end
+  it 'Should display user name' do
+    visit user_posts_path(@user1.id)
+    expect(page).to have_content('Tim')
+  end
 
-  # it 'Should display user s posts count ' do
-  #   visit user_posts_path(@user1.id)
-  #   expect(page).to have_content('Number of posts: 0')
-  # end
+  it 'Should display user s posts count ' do
+    visit user_posts_path(@user1.id)
+    expect(page).to have_content('Number of posts: 0')
+  end
 
-  # it 'Should display post text' do
-  #   visit user_posts_path(@user1.id)
-  #   expect(page).to have_content('Body1')
-  # end
+  it 'Should display post text' do
+    visit user_posts_path(@user1.id)
+    expect(page).to have_content('Body1')
+  end
 
-  # it 'Should display first comment' do
-  #   @user1.comments.create(post_id: @user1.posts.first.id, text: 'Comment1')
-  #   visit user_posts_path(@user1.id)
-  #   expect(page).to have_content('Comment1')
-  # end
+  it 'Should display first comment' do
+    @user1.comments.create(post_id: @user1.posts.first.id, text: 'Comment1')
+    visit user_posts_path(@user1.id)
+    expect(page).to have_content('Comment1')
+  end
 end
