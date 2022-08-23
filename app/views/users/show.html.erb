@@ -1,1 +1,29 @@
-<p>Here are the details for a user</p>
+ <div class='user-showed'>
+ <div class='user-card'>
+ <%= image_tag @user.photo, :class => 'user-showed-image', alt: 'User image' %>
+ <div class='user-showed-details'>
+ <h3><%= @user.name %></h3>
+      <p>Number of posts: <%= @user.posts_counter.nil? ? 0 : @user.posts_counter %></p>
+ </div> 
+ 
+  </div>
+  <div class='bio-showed'>
+ <h3>
+ Bio
+ </h3>
+ <p><%=@user.bio%><p>
+ </div>
+ <div><% @user.recent_post.each_with_index do |post,i| %>
+    <div class='post-card'>
+    <p>Post#<%=i+1%></p>
+      <h3><%= post.title %></h3>
+      <p class='showed-card-text'><%= post.text %></p>
+      <div class='showed-action'>
+        <p>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+      </div>
+    </div>
+  <% end %>
+ <%=link_to 'See all posts', user_posts_path(@user), :class => 'all-btn '%>
+ <div>
+</div>

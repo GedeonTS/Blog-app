@@ -1,1 +1,11 @@
-<p>Here is a list of users</p>
+<div class='user-wrapper'> <% @users.each do |user| %>
+    <div class='user'>
+      <%= image_tag user.photo, :class => 'user-image', alt: 'User image' %>
+      <div class='user-details'>
+<h3>
+<%= link_to user.name,user, :class=> 'user-name' %>
+</h3>
+     <p>Number of posts: <%= user.posts_counter.nil? ? 0 : user.posts_counter %></p>
+     </div>
+    </div>
+  <% end %></div>

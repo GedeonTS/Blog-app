@@ -1,1 +1,15 @@
-<p>Here are the details for a specific post</p>
+<div class='post-card'>
+  <div class='full-post-header'>
+    <h3>"<%= @post.title %>" by: <%= User.find(@post.author_id).name %></h3>
+    <div class='showed-post-action'>
+      <p>Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %></p>
+      <p>Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
+    </div>
+  </div>
+ <div class='post-text'> <%= @post.text %></div>
+</div>
+<div class='user-comments'>
+  <% @post.comments.each do |comment| %>
+    <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+  <% end %>
+</div>
