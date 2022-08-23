@@ -33,6 +33,12 @@ RSpec.describe User, type: :view do
     expect(current_path).to eq(user_path(@user1.id))
   end
 
+  it 'Redirects to the post show page when you click on a post' do
+    visit user_posts_url(@user1.id)
+    click_link 'User1 Title'
+    expect(current_path).to eq(user_post_path(@user1.id, @user1.posts.first.id))
+  end
+
   it 'Should display username' do
     visit user_path(@user1.id)
     expect(page).to have_content('Tim')
