@@ -18,8 +18,8 @@ RSpec.describe Post, type: :view do
     expect(page).to have_content('Comments')
   end
 
-  it 'should display likes counter' do
-    expect(page).to have_content('Likes')
+  it 'Shows how many likes a post has' do
+    expect(page).to have_content('Likes: 0')
   end
 
   it 'Should display text' do
