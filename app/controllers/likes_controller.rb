@@ -1,12 +1,13 @@
 class LikesController < ApplicationController
   def create
     post = Post.find(params[:post_id])
-    author = current_user
-    @like = Like.new(post:, author:)
-    if @like
-      redirect_to user_post_url(author, post)
+    # author = User.find(post.author_id)
+    @like = current_user.likes.build(post_id: post.id)
+    # @like = Like.new(post_id:post.id, author:)
+    if @like.save
+      redirect_to user_post_url(post.author_id, post.id)
     else
-      render :new, alert: 'Like was not created.'
+      redirect_to user_post_url(author, post), alert: 'Like was not created.'
     end
   end
 end
