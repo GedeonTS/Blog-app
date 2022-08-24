@@ -1,4 +1,7 @@
-<div class='user-wrapper'> <% @users.each do |user| %>
+
+<div class='user-wrapper'> 
+<%= render 'shared/logout'%>
+<% @users.each do |user| %>
     <div class='user'>
       <%= image_tag user.photo, :class => 'user-image', alt: 'User image' %>
       <div class='user-details'>
