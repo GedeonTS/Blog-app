@@ -40,6 +40,17 @@ $ Rubocop
 - Twitter: [@Gedeon191](https://twitter.com/Gedeon191)
 - LinkedIn: [Ushindi Gedeon](https://linkedin.com/in/ushindi-gedeon)
 
+## collaborator
+
+👤 **Irotori Baroka** 
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-baroka-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://linkedin.com/in/baroka)
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-baroka--wp-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/baroka-wp)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-birotori-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/birotori)
+
+- Gmail: [![Gmail Badge](https://img.shields.io/badge/-baroka--Irotori-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:birotori@gmail.com)
 
 ## Contributing
 
