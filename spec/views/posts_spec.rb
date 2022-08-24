@@ -22,6 +22,13 @@ RSpec.describe Post, type: :view do
     expect(page).to have_content('Likes: 0')
   end
 
+  it 'Shows a section for pagination if there are more posts than fit on the view' do
+    visit user_path(@user.id)
+    click_link 'See all posts'
+    click_link 'Pagination'
+    expect(page).to have_content('Tom')
+  end
+
   it 'Should display text' do
     expect(page).to have_content('Body')
   end
