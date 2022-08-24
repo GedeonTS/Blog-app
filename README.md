@@ -40,7 +40,7 @@ $ Rubocop
 - Twitter: [@Gedeon191](https://twitter.com/Gedeon191)
 - LinkedIn: [Ushindi Gedeon](https://linkedin.com/in/ushindi-gedeon)
 
-## collaborator
+## Collaborator
 
 👤 **Irotori Baroka** 
 
