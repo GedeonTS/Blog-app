@@ -1,0 +1,35 @@
+.sign-wrapper {
+  width: 60%;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-checkbox {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox-text {
+  height: 3px;
+  margin-top: 9px;
+}
+
+.sign-wrapper input {
+  height: 2rem;
+  width: 100%;
+  border: 4px solid rgba(0, 0, 0, 0.534);
+  margin-bottom: 1rem;
+}
+
+.field-checkbox input {
+  width: 30px;
+
+  /* margin: 0;
+  padding: 0; */
+}
+
+.actions input {
+  border: none;
+}

@@ -14,4 +14,5 @@
  *= require 'unique_user'
  *= require 'all_users'
  *= require 'full_post_details'
+ *= require 'sign_up'
  */
