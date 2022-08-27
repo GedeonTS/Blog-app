@@ -5,6 +5,9 @@
     <div class='showed-post-action'>
       <p>Comments: <%= @post.comments_count.nil? ? 0 : @post.comments_count %></p>
       <p>Likes: <%= @post.likes_count.nil? ? 0 : @post.likes_count %></p>
+      <% if can? :destroy, @post %>
+    <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete %>
+  <% end %>
     </div>
   </div>
  <div class='post-text'> <%= @post.text %></div>

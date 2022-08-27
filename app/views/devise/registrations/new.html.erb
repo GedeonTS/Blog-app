@@ -8,7 +8,7 @@
   </div>
 
   <div class="field">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:'name' %>
+    <%= f.text_field :name, placeholder:'name' %>
   </div>
 
   <div class="field">
@@ -21,6 +21,13 @@
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'password confirmation' %>
   </div>
+  
+ <div class='radio-btn'>
+    <b>Role :</b><br /><br />
+  <div class='btn-item'>  <%= f.radio_button :role, 'admin' %> <label>Admin</label></div><br />
+    <div class='btn-item'><%= f.radio_button :role, 'client' %><label>Client</label></div> <br />
+</div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

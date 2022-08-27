@@ -3,7 +3,10 @@
 <div class='user-card'>
  <%= image_tag @user.photo, :class => 'user-showed-image', alt: 'User image' %>
  <div class='user-showed-details'>
- <h3><%= @user.name %></h3>
+ <h3><%= @user.email %></h3>
+ <% if can? :read, @post %>
+ <%=link_to 'New post', new_user_post_path(@user), :class =>'new-post'%>
+ <% end %>
       <p>Number of posts: <%= @user.posts_counter.nil? ? 0 : @user.posts_counter %></p>
  </div> 
  </div>
@@ -11,6 +14,7 @@
  <% @posts.each_with_index do |post,i| %>
     <div class='post-card'>
     <h4>Post#<%=i+1 %></h4>
+    <button>Delete</button>
       <h3><%=link_to post.title, user_post_path(@user.id, post), :class => 'post-title'%></h3>
       <p class='showed-card-text'><%= post.text %></p>
       <div class='showed-action'>
