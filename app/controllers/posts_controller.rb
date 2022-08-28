@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     user = current_user
     @post = Post.find_by(id: params[:id], author_id: params[:user_id])
 
-    if @post.destroy
+    if @comment.destroy
       flash[:notice] = 'Post deleted!'
     else
       flash[:alert] = 'Error! Please try again later.'

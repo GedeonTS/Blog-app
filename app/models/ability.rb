@@ -9,6 +9,7 @@ class Ability
       can :manage, Post, author_id: user.id
       can :manage, User, id: user.id
       can :manage, Comment, author_id: user.id
+      can :read, :all
     end
     can :read, :all
 
