@@ -1,16 +1,24 @@
 <div class='post-card'>
+<%= render 'shared/logout'%>
   <div class='full-post-header'>
     <h3>"<%= @post.title %>" by: <%= User.find(@post.author_id).name %></h3>
     <div class='showed-post-action'>
       <p>Comments: <%= @post.comments_count.nil? ? 0 : @post.comments_count %></p>
       <p>Likes: <%= @post.likes_count.nil? ? 0 : @post.likes_count %></p>
+      <% if can? :destroy, @post %>
+    <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete %>
+  <% end %>
     </div>
   </div>
  <div class='post-text'> <%= @post.text %></div>
 </div>
 <div class='user-comments'>
   <% @post.comments.each do |comment| %>
-    <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+    <p><%= User.find(comment.author_id).name %>: <%= comment.text %>
+    <%if can? :manage, comment%>
+     <%=button_to "delete", user_post_comment_path(@post.id, comment.id), method: :delete,  data: {confirm: 'Are You Sure You Want to Delete This Post'}, class: 'log_out'%>
+     <% end %>
+    </p>
   <% end %>
       <%= render partial: "likes/create" %>
     <%= render partial: "comments/create" %>

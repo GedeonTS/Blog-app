@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
@@ -9,6 +11,11 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
     @comments = Comment.where(post_id: @post.id)
     @likes = Like.where(post_id: @post.id)
+
+    respond_to do |format|
+      format.html # comments.html.erb
+      format.json { render json: @comments }
+    end
   end
 
   def new
@@ -17,7 +24,6 @@ class PostsController < ApplicationController
 
   def create
     new_post = current_user.posts.build(post_params)
-
     respond_to do |format|
       format.html do
         if new_post.save
@@ -27,6 +33,18 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    user = current_user
+    @post = Post.find_by(id: params[:id], author_id: params[:user_id])
+
+    if @comment.destroy
+      flash[:notice] = 'Post deleted!'
+    else
+      flash[:alert] = 'Error! Please try again later.'
+    end
+    redirect_to user_posts_path(user)
   end
 
   private

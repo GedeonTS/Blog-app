@@ -13,6 +13,12 @@ gem 'sprockets-rails'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'devise'
+
+gem 'active_model_serializers', '~> 0.10.13'
+
+gem 'cancancan'
+
 gem 'pg'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'

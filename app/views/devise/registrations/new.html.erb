@@ -1,0 +1,37 @@
+<h2>Sign up</h2>
+<div class='sign-wrapper'>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:'email' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder:'name' %>
+  </div>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:'password' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'password confirmation' %>
+  </div>
+  
+ <div class='radio-btn'>
+    <b>Role :</b><br /><br />
+  <div class='btn-item'>  <%= f.radio_button :role, 'admin' %> <label>Admin</label></div><br />
+    <div class='btn-item'><%= f.radio_button :role, 'client' %><label>Client</label></div> <br />
+</div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
