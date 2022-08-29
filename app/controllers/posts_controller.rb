@@ -11,6 +11,11 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
     @comments = Comment.where(post_id: @post.id)
     @likes = Like.where(post_id: @post.id)
+
+    respond_to do |format|
+      format.html # comments.html.erb
+      format.json { render json: @comments }
+    end
   end
 
   def new
