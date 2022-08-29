@@ -43,7 +43,6 @@
   justify-items: center;
 }
 
-
 .radio-btn input {
   width: auto;
   height: 30px;
@@ -53,14 +52,13 @@
   align-items: center;
 }
 
-
 .btn-item {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   height: 2rem;
-  font-size: 1.2rem
+  font-size: 1.2rem;
 }
 
 .btn-item label {
