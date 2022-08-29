@@ -19,11 +19,11 @@
       <h3><%= post.title %></h3>
       <p class='showed-card-text'><%= post.text %></p>
       <div class='showed-action'>
-        <p>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %></p>
-        <p>Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+        <p>Comments: <%= post.comments_count.nil? ? 0 : post.comments_count %></p>
+        <p>Likes: <%= post.likes_count.nil? ? 0 : post.likes_count %></p>
       </div>
     </div>
   <% end %>
- <%=link_to 'See all posts', user_posts_path(@user), :class => 'all-btn '%>
+ <%=link_to 'See all posts', user_posts_path(@user), :class => 'all-btn'%>
  <div>
 </div>
